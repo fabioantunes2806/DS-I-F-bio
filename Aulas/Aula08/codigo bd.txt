@@ -1,0 +1,13 @@
+Create database projetoJava;
+Use projetoJava;
+
+create table usuario(
+	id bigint(10) auto_increment,
+    nome varchar(255),
+    cpf varchar(255),
+    email varchar(255),
+    telefone varchar(255),
+    primary key (id)
+);
+    
+    select * from usuario;

@@ -1,26 +1,20 @@
 package factory;
 
-// situa em qual package ou “pacote” está a classe package factory;
-// faz as importações de classes necessárias para o funcionamento do programa
+import java.sql.Connection;
 
-import java.sql.Connection; // conexão SQL para Java
+import java.sql.DriverManager;
 
-import java.sql.DriverManager; // driver de conexão SQL para Java
-
-import java.sql.SQLException; // classe para tratamento de exceções
+import java.sql.SQLException;
 
 public class ConnectionFactory {
     
-    public Connection getConnection() {        
-        try{            
-           return
-            DriverManager.getConnection("jbdc:mysql://localhost:3306/projetojava","root","");
+    public Connection getConnection(){
+        try{
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/projetoJava", "root", "root");//jdbc:mysql://localhost:3306/?user=root
         }
-        catch(SQLException excecao){
-            
-            throw new RuntimeException(excecao);
         
-                    }
+        catch(SQLException excecao){
+            throw new RuntimeException(excecao);
         }
+    }
 }
-
