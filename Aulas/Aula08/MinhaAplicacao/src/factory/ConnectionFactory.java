@@ -8,13 +8,15 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
     
-    public Connection getConnection(){
-        try{
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/projetoJava", "root", "root");//jdbc:mysql://localhost:3306/?user=root
+    
+      public Connection getConnection() {
+        try {
+            return DriverManager.getConnection("jdbc:mysql://localhost/projetojava","root","root");
         }
-        
-        catch(SQLException excecao){
+        catch(SQLException excecao) {
             throw new RuntimeException(excecao);
         }
     }
 }
+
+

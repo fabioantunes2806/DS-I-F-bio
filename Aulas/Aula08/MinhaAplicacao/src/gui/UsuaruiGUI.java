@@ -179,22 +179,23 @@ public class UsuaruiGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Usuario usuario = new Usuario();
-        
-        usuario.setNome(jTextField1.getText());
-        usuario.setCpf(jTextField2.getText());
-        usuario.setEmail(jTextField3.getText());
-        usuario.setTelefone(jTextField4.getText());
-        
-        if(jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
-        }else{
-            UsuarioDAO dao = new UsuarioDAO();
-            
-            dao.adiciona(usuario);
-            
-            JOptionPane.showMessageDialog(null, "Usuário"+jTextField1.getText()+" inserido com sucesso");
-        }
+      Usuario usuarios = new Usuario();
+    usuarios.setNome(jTextField1.getText());
+    usuarios.setCpf(jTextField2.getText());
+    usuarios.setEmail(jTextField3.getText());
+    usuarios.setTelefone(jTextField4.getText());
+
+    // fazendo a validação dos dados
+    if ((jTextField1.getText().isEmpty()) || (jTextField2.getText().isEmpty()) || (jTextField3.getText().isEmpty()) || (jTextField4.getText().isEmpty())) {
+       JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
+    }
+    else {
+
+        // instanciando a classe UsuarioDAO do pacote dao e criando seu objeto dao
+        UsuarioDAO dao = new UsuarioDAO();
+        dao.adiciona(usuarios);
+        JOptionPane.showMessageDialog(null, "Usuário "+jTextField1.getText()+" inserido com sucesso! ");
+    }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
