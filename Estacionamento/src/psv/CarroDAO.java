@@ -38,7 +38,7 @@ public class CarroDAO {
     }
     
     public String alterar(CarroBean carro){
-        String sql = "update carro set color = ?, descricao = ?";
+        String sql = "update carro set cor = ?, descricao = ?";
         sql += "where placa = ?";
         
         try{
