@@ -4,6 +4,7 @@ public class CarroBean {
     private String placa;
     private String cor;
     private String descricao;
+    private String ano;
 
     /**
      * @return the placa
@@ -45,5 +46,19 @@ public class CarroBean {
      */
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    /**
+     * @return the ano
+     */
+    public String getAno() {
+        return ano;
+    }
+
+    /**
+     * @param ano the ano to set
+     */
+    public void setAno(String ano) {
+        this.ano = ano;
     }
 }
